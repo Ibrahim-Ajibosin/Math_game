@@ -1,0 +1,6 @@
+Ann 20
+Bret 30
+Lucy 50
+Ola 80
+Suraj 40
+Tea 5
