@@ -1,7 +1,6 @@
 
 
 ####### Getting user point ##########
-
 def get_user_point(userName):
  user_list = []
  score_list = []
@@ -16,9 +15,7 @@ def get_user_point(userName):
     else:
         return "-1"   
 
-
 ######## Updating user points #############
-
 def updateUserPoints(newUser,user_Name,score):
     if newUser == True:
         with open("user_Scores.txt", "a") as my_file:
@@ -76,7 +73,7 @@ def generate_question():
     print(user_question)
 
     try :
-    ######### Prompt the user for an answer to the question  #########
+    ######### Prompt the user for an answer to the question #########
         user_input = int(input("Type your answer"))
         if user_input == result :
             print("Good work ")
@@ -86,5 +83,3 @@ def generate_question():
             return 0
     except:
         print("Enter an interger")
-
-
