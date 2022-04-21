@@ -4,3 +4,5 @@ Lucy 50
 Ola 80
 Suraj 40
 Tea 5
+ibrahim 1
+Tim 0
