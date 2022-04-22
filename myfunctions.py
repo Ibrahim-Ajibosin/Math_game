@@ -9,9 +9,9 @@ def get_user_point(userName):
        content = line.split()
        user_list.append(content[0])
        score_list.append(content[1])
-    for x,y in zip(user_list,score_list):
-     if userName == x:
-        return y
+    for name,user_score in zip(user_list,score_list):
+     if userName == name:
+        return user_score
     else:
         return "-1"   
 
@@ -19,18 +19,19 @@ def get_user_point(userName):
 def updateUserPoints(newUser,user_Name,score):
     if newUser == True:
         with open("user_Scores.txt", "a") as my_file:
-           my_file.write("\n" + user_Name + " " + str(score) + "\n")
+           my_file.write(user_Name + " " + str(score) + "\n")
            print('1 ran')
     else:
          details = []
-         with open("user_Scores.tmp", "w") as my_file:
+         with open("user_Score.tmp", "w") as my_file:
             with open("user_Scores.txt", "r") as s:      
                 for line in s:
-                    content = line.split()
-                    if user_Name == content[0]:
-                        content[1] = score
-                    details.append(content)
-            my_file.write(str(details) + "\n")        
+                    #content = line.split()
+                    if user_Name == line[0]:
+                        line[1] = score
+                    details.append(line)
+                for item in details:
+                 my_file.write(str(item) + " ")        
             print(details)
             print('2 ran') 
                        

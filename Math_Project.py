@@ -14,12 +14,11 @@ try:
         score = int(get_user_point(name))
 
         newUser = True if score == -1 else False
-            
+
         if newUser == True :
-          score = 0
-
+           score = 0
+          
         userChoice = 0
-
         while userChoice != "-1" :
             userscore = generate_question()
             score = userscore
