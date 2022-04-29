@@ -1,10 +1,7 @@
-Ann 20
-Bret 30
-Lucy 50
-Ola 80
-Suraj 40
-Tea 5
-ibrahim 1
-Tim 0
-Ben 1
-BenBen 1
+Ann 1
+Bret 0
+Lucy 2
+Ola 4
+Joel 0
+joel 3
+Bimbo 1

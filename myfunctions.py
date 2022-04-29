@@ -1,4 +1,4 @@
-
+from os import remove, rename
 
 ####### Getting user point ##########
 def get_user_point(userName):
@@ -9,11 +9,11 @@ def get_user_point(userName):
        content = line.split()
        user_list.append(content[0])
        score_list.append(content[1])
-    for name,user_score in zip(user_list,score_list):
-     if userName == name:
-        return user_score
+    for x,y in zip(user_list,score_list):
+     if userName == x:
+        return y
     else:
-        return "-1"   
+        return "-1"  
 
 ######## Updating user points #############
 def updateUserPoints(newUser,user_Name,score):
@@ -22,18 +22,18 @@ def updateUserPoints(newUser,user_Name,score):
            my_file.write(user_Name + " " + str(score) + "\n")
            print('1 ran')
     else:
-         details = []
-         with open("user_Score.tmp", "w") as my_file:
-            with open("user_Scores.txt", "r") as s:      
-                for line in s:
-                    #content = line.split()
-                    if user_Name == line[0]:
-                        line[1] = score
-                    details.append(line)
-                for item in details:
-                 my_file.write(str(item) + " ")        
-            print(details)
-            print('2 ran') 
+         with open("userScore.tmp", "w") as s:
+            with open("user_Scores.txt", "r") as my_file:      
+                for line in my_file:
+                    content = line.split()
+                    if user_Name == content[0] :
+                        content[1] = score
+                    line = content[0] + " " + str(content[1]) + '\n'
+                    print(line)
+                    s.write(str(line))        
+         remove('user_Scores.txt')
+         rename('userScore.tmp', 'user_Scores.txt')
+         print('2 ran') 
                        
 
 ################### Generating the question ###################
