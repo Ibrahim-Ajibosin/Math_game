@@ -29,7 +29,6 @@ def updateUserPoints(newUser,user_Name,score):
                     if user_Name == content[0] :
                         content[1] = score
                     line = content[0] + " " + str(content[1]) + '\n'
-                    print(line)
                     s.write(str(line))        
          remove('user_Scores.txt')
          rename('userScore.tmp', 'user_Scores.txt')
@@ -53,12 +52,12 @@ def generate_question():
      operatorList[z] = operatorDict[random.randint(1,4)]
     count = operatorList.count("**")
 
-    ######## keeping the first occurence of "**" and replacing the subsequent ones with an empty string ########
+    ######## keeping the first occurence of "**" and replacing the subsequent ones with a "+" ########
     wanted_index = [a for a,b in enumerate(operatorList) if b == "**"]
     if len(wanted_index) > 1 :
      for j in range(1, len(wanted_index)):
         operatorList[wanted_index[j]] = "+"
-    print(count)
+    print(f" ** occurred {count} times")
     print (operatorList)
 
     ############## Generating the mathematical expression ##############
@@ -73,6 +72,8 @@ def generate_question():
     user_question = question_string.replace("**", "^")
     print(user_question)
 
+    
+    ######### Prompt the user for an answer to the question #########
     try :
     ######### Prompt the user for an answer to the question #########
         user_input = int(input("Type your answer"))
@@ -81,6 +82,6 @@ def generate_question():
             return 1
         else:
             print("Try again")
-            return 0
+            return -1
     except:
         print("Enter an interger")

@@ -6,7 +6,8 @@ from myfunctions import generate_question, get_user_point, updateUserPoints
 
 try :
     name = input("Enter your username")
-
+      
+    ########## Make sure the user enters string type only ##########
     if not name.isalpha():
         print("Your last name cant be a digit")
     else:

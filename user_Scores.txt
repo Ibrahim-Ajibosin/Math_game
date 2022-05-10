@@ -1,7 +1,8 @@
 Ann 1
-Bret 0
-Lucy 2
+Bret -1
+Lucy 1
 Ola 4
-Joel 0
-joel 3
-Bimbo 1
+Joel 1
+joel 4
+Bimbo 2
+Ben 4
